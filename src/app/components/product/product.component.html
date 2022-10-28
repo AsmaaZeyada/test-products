@@ -1,0 +1,18 @@
+<section>
+    <div class="container">
+        <div class="row">
+            <div *ngFor="let product of products;let i = index" class="col-lg-3 col-md-4 col-12 mb-5">
+                <img src="/assets/images/{{product?.imageName}}.jpg" alt="" class="mb-3 ">
+                <h3 class="text-center">{{product?.nameEn}}</h3>
+                <p>{{product?.price}}</p>
+                <div class="f text-center">
+                    <fa-icon (click)="add(i)" [icon]="plus" style="font-size: 40px; color: rgb(14, 126, 20);"></fa-icon>
+                    <p>{{product?.count}}</p>
+                    <fa-icon (click)="remove(i)" [icon]="minus" style="font-size: 40px; color: rgb(151, 0, 0);">
+                    </fa-icon>
+                </div>
+                <button type="button" class="btn">Add</button>
+            </div>
+        </div>
+    </div>
+</section>
